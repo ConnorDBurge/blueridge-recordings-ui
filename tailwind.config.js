@@ -1,18 +1,37 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import formsPlugin from "@tailwindcss/forms";
+import typographyPlugin from "@tailwindcss/typography";
+
+export default {
+  important: true,
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  plugins: [formsPlugin, typographyPlugin],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem", // 16px
+          sm: "2rem", // 32px
+          xl: "4rem", // 64px
+        },
+        screens: {
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1280px",
+          "2xl": "1328px",
+        },
+      },
+      colors: {
+        colors: {
+          primary: "#141028",
+          secondary: "#FED8A7",
+          tertiary: "#2A283C",
+        },
       },
     },
   },
-  plugins: [],
 };
