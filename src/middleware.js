@@ -1,8 +1,9 @@
 import createMiddleware from "next-intl/middleware";
-import { locales } from "./i18n";
+
+import locales from "@/config/locales";
 
 export default createMiddleware({
-  locales,
+  locales: locales.map(({ code }) => code),
   defaultLocale: "en",
 });
 

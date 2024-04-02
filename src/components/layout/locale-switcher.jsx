@@ -4,9 +4,9 @@ import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import React, { useTransition } from "react";
 
-import { locales as availableLocales } from "@/i18n";
+import locales from "@/config/locales";
 
-export default function LocaleSwitcher({ locales }) {
+export default function LocaleSwitcher() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const activeLocale = useLocale();
@@ -26,14 +26,11 @@ export default function LocaleSwitcher({ locales }) {
         onChange={onLocaleChange}
         disabled={isPending}
       >
-        {locales.map(
-          ({ locale, name }) =>
-            availableLocales.includes(locale) && (
-              <option key={locale} value={locale}>
-                {name}
-              </option>
-            )
-        )}
+        {locales.map(({ code, language }) => (
+          <option key={code} value={code}>
+            {language}
+          </option>
+        ))}
       </select>
     </label>
   );
