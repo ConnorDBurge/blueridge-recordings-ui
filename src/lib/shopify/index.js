@@ -1,4 +1,10 @@
-import { SHOP_QUERY, MENU_QUERY } from "@/lib/shopify/queries";
+import {
+  MENU_QUERY,
+  STOREFRONT_SHOP_QUERY,
+  ADMIN_SHOP_QUERY,
+  LOCALE_QUERY,
+  MARKETS_QUERY,
+} from "@/lib/shopify/queries";
 import { _fetch, getPath } from "@/lib/utils";
 
 const storefrontDomain = process.env.SHOPIFY_STOREFRONT_ENDPOINT;
@@ -24,12 +30,26 @@ async function admin(args) {
   });
 }
 
-// const shop = await getShop();
-// export { shop };
+export async function getStorefront() {
+  const res = await storefront({ query: STOREFRONT_SHOP_QUERY });
+  return res.body?.data?.storefront || {};
+}
 
-export async function getShop() {
-  const res = await storefront({ query: SHOP_QUERY });
-  return res.body?.data?.shop || {};
+export async function getAdmin() {
+  const res = await admin({ query: ADMIN_SHOP_QUERY });
+  const hours = res.body?.data?.hours?.hours || [];
+  const _admin = res.body?.data?.admin || {};
+  return { ..._admin, hours };
+}
+
+export async function getLocales() {
+  const res = await admin({ query: LOCALE_QUERY });
+  return res.body?.data?.locales || [];
+}
+
+export async function getMarkets() {
+  const res = await admin({ query: MARKETS_QUERY });
+  return res.body?.data?.markets?.nodes || [];
 }
 
 export async function getMenu(handle) {
