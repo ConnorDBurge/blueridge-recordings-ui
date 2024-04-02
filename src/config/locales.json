@@ -2,5 +2,13 @@
   {
     "code": "en",
     "language": "English"
+  },
+  {
+    "code": "es",
+    "language": "Español"
+  },
+  {
+    "code": "fr",
+    "language": "Français"
   }
 ]

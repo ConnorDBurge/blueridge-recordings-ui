@@ -1,5 +1,4 @@
-import { getMenu, getLocales } from "@/lib/shopify";
-import LocaleSwitcher from "./locale-switcher";
+import { getMenu } from "@/lib/shopify";
 
 export default async function Navbar() {
   const primaryMenu = await getMenu("primary-menu"); // Move to child component
@@ -8,7 +7,6 @@ export default async function Navbar() {
   return (
     <div>
       <h1>Hello</h1>
-      <LocaleSwitcher />
     </div>
   );
 }
