@@ -1,4 +1,4 @@
-import { shop } from "@/lib/shopify";
+// import { shop } from "@/lib/shopify";
 
 export const gql = String.raw;
 
@@ -19,8 +19,6 @@ export const ensureStartsWith = (stringToCheck, startsWith) =>
 
 export const validateEnvironmentVariables = () => {
   const requiredEnvironmentVariables = [
-    "SHOPIFY_STORE_DOMAIN",
-    "SHOPIFY_API_VERSION",
     "SHOPIFY_STOREFRONT_ACCESS_TOKEN",
     "SHOPIFY_ADMIN_ACCESS_TOKEN",
     "SHOPIFY_STOREFRONT_ENDPOINT",
@@ -53,12 +51,12 @@ export const validateEnvironmentVariables = () => {
 };
 
 export function getPath(url) {
-  const primaryDomainUrl = shop?.primaryDomain?.url;
+  //   const primaryDomainUrl = shop?.primaryDomain?.url;
   return url.includes("myshopify.com") ||
     url.includes("localhost") ||
-    url.includes(process.env.NEXT_PUBLIC_VERCEL_URL) ||
-    url.includes(primaryDomainUrl)
-    ? `${new URL(url).pathname}${new URL(url).search}${new URL(url).hash}`
+    url.includes(process.env.NEXT_PUBLIC_VERCEL_URL)
+    ? // url.includes(primaryDomainUrl)
+      `${new URL(url).pathname}${new URL(url).search}${new URL(url).hash}`
     : url;
 }
 

@@ -24,8 +24,8 @@ async function admin(args) {
   });
 }
 
-const shop = await getShop();
-export { shop };
+// const shop = await getShop();
+// export { shop };
 
 export async function getShop() {
   const res = await storefront({ query: SHOP_QUERY });

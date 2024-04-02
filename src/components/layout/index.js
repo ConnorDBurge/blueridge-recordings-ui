@@ -1,4 +1,4 @@
-import { shop, getMenu } from "@/lib/shopify";
+import { getMenu } from "@/lib/shopify";
 
 export default async function Navbar() {
   const primaryMenu = await getMenu("primary-menu"); // Move to child component
@@ -6,7 +6,7 @@ export default async function Navbar() {
 
   return (
     <div>
-      <h1>{shop?.name}</h1>
+      <h1>Hello</h1>
     </div>
   );
 }
