@@ -1,5 +1,5 @@
 export default function Page() {
-  console.log("Hello, Next.js!");
+  // throw new Error("This is an error");
   return (
     <>
       <h1>Hello, Next.js!</h1>
