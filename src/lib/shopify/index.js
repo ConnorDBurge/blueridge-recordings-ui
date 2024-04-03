@@ -57,22 +57,24 @@ export async function getMarkets() {
 export async function getMenu(handle) {
   const res = await storefront({
     query: MENU_QUERY,
-    variables: {
-      handle,
-    },
+    variables: { handle },
   });
 
   const menu = res.body?.data?.menu;
 
-  function addPaths(items) {
+  function calcDepth(items, depth = 0) {
+    let maxDepth = depth;
     items?.forEach((item) => {
-      item.path = getPath(item?.url);
-      if (item?.items && item?.items?.length > 0) {
-        addPaths(item?.items);
-      }
+      const childDepth =
+        item.items?.length > 0 ? calcDepth(item.items, depth + 1) : depth;
+      maxDepth = Math.max(maxDepth, childDepth);
+      item.depth = maxDepth - depth;
+      item.path = getPath(item.url);
     });
+    return maxDepth;
   }
 
-  addPaths(menu?.items);
+  const totalDepth = calcDepth(menu?.items);
+  menu.depth = totalDepth + 1;
   return menu;
 }

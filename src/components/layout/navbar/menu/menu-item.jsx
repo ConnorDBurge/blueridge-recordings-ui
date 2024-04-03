@@ -18,7 +18,7 @@ export default function MenuItem({ item }) {
     >
       <li
         className={`flex gap-1 my-0 pt-[4px] pb-[2px] transition duration-200 ease-in-out font-medium items-center text-white 
-        ${!isActive && "hover:text-colors-secondary"}`}
+        ${!isActive && "group-hover:text-colors-secondary"}`}
       >
         {item?.title}
         {item?.items && item?.items.length > 0 && (

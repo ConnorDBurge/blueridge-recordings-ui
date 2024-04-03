@@ -28,7 +28,6 @@ export default function Header({ children, className }) {
     };
 
     const onScroll = () => {
-      console.log("scrolling");
       window.requestAnimationFrame(handleScroll);
     };
 
