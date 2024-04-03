@@ -51,13 +51,14 @@ export const validateEnvironmentVariables = () => {
 };
 
 export function getPath(url) {
-  //   const primaryDomainUrl = shop?.primaryDomain?.url;
-  return url.includes("myshopify.com") ||
+  const path =
+    url.includes("myshopify.com") ||
     url.includes("localhost") ||
+    url.includes(process.env.SITE_DOMAIN) ||
     url.includes(process.env.NEXT_PUBLIC_VERCEL_URL)
-    ? // url.includes(primaryDomainUrl)
-      `${new URL(url).pathname}${new URL(url).search}${new URL(url).hash}`
-    : url;
+      ? `${new URL(url).pathname}${new URL(url).search}${new URL(url).hash}`
+      : url;
+  return path;
 }
 
 export async function _fetch({

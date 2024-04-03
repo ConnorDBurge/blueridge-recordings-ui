@@ -1,12 +1,2 @@
-import { getMenu } from "@/lib/shopify";
-
-export default async function Navbar() {
-  const primaryMenu = await getMenu("primary-menu"); // Move to child component
-  const secondaryMenu = await getMenu("secondary-menu"); // Move to child component
-
-  return (
-    <div>
-      <h1>Hello</h1>
-    </div>
-  );
-}
+export { default as Navbar } from "./navbar/navbar.jsx";
+export { default as Footer } from "./footer/footer.jsx";

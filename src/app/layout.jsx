@@ -1,7 +1,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Suspense } from "react";
 
-import Navbar from "@/components/layout/index";
+import { Footer, Navbar } from "@/components/layout";
 import { getStorefront } from "@/lib/shopify";
 import { baseUrl } from "@/lib/utils";
 import "./globals.css";
@@ -17,18 +17,18 @@ export async function generateMetadata() {
   return metadata;
 }
 
-export default async function LocaleLayout({ children }) {
+export default async function RootLayout({ children }) {
   const shop = await getStorefront();
+  const favicon = shop?.brand?.squareLogo?.image?.url;
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href={shop?.brand?.squareLogo?.image?.url} />
+        <link rel="icon" href={favicon} />
       </head>
       <body>
-        <Suspense>
-          <Navbar />
-        </Suspense>
+        <Navbar />
         <Suspense>{children}</Suspense>
+        <Footer />
         <SpeedInsights />
       </body>
     </html>

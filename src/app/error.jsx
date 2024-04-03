@@ -1,6 +1,6 @@
 "use client";
 
-export default function Error({ reset }) {
+export default function RootError({ reset }) {
   return (
     <div>
       <h2>Oh no!</h2>

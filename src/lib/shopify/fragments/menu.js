@@ -30,6 +30,7 @@ const menuFragment = gql`
 
   fragment menu on Menu {
     id
+    handle
     items {
       ...ParentMenuItem
     }
