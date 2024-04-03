@@ -42,9 +42,7 @@ export default function Header({ children, className }) {
 
   return (
     <header
-      className={`${
-        isCollapsed ? "md:h-[83px]" : "md:h-[116px]"
-      }  ${className} h-[58px]`}
+      className={`${isCollapsed ? "md:h-[83px]" : "md:h-[116px]"} ${className}`}
     >
       {children}
     </header>
