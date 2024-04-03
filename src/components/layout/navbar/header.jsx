@@ -45,7 +45,7 @@ export default function Header({ children, shop }) {
   return (
     <header
       className={`bg-colors-primary h-[60px] sticky top-0 z-10 py-2 md:pt-4 md:pb-0 transition-all duration-300 ease-in-out ${
-        isCollapsed ? "md:h-[83px]" : "md:h-[122px]"
+        isCollapsed ? "md:h-[83px]" : "md:h-[119px]"
       }`}
     >
       <div className="container flex flex-col justify-between">

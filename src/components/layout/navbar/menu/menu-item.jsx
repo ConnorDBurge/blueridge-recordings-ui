@@ -14,10 +14,10 @@ export default function MenuItem({ item }) {
       className={`
       ${isActive && styles.menu_active}
       ${styles.menu_underline} 
-      no-underline first:ml-0 last:mr-0`}
+      no-underline first:ml-0 last:mr-0 group`}
     >
       <li
-        className={`group my-0 py-1 transition duration-200 ease-in-out font-medium flex items-center text-white 
+        className={`my-0 pt-[4px] pb-[2px] transition duration-200 ease-in-out font-medium flex items-center text-white 
         ${!isActive && "hover:text-colors-secondary"}`}
       >
         {item?.title}
