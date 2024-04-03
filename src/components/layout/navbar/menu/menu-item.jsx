@@ -12,18 +12,18 @@ export default function MenuItem({ item }) {
     <Link
       href={item?.path}
       className={`
-      ${isActive && styles.menu_active}
-      ${styles.menu_underline} 
-      no-underline first:ml-0 last:mr-0 group`}
+        ${isActive && styles.menu_active}
+        ${styles.menu_underline} 
+        no-underline first:ml-0 last:mr-0 group`}
     >
       <li
-        className={`my-0 pt-[4px] pb-[2px] transition duration-200 ease-in-out font-medium flex items-center text-white 
+        className={`flex gap-1 my-0 pt-[4px] pb-[2px] transition duration-200 ease-in-out font-medium items-center text-white 
         ${!isActive && "hover:text-colors-secondary"}`}
       >
         {item?.title}
         {item?.items && item?.items.length > 0 && (
           <ChevronDownIcon
-            className={`w-6 h-6 ml-1 transition-all duration-300 ease-in-out group-hover:rotate-180
+            className={`w-6 h-6 transition-all duration-300 ease-in-out group-hover:rotate-180
             ${!isActive && "group-hover:fill-colors-secondary"}`}
           />
         )}

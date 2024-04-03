@@ -1,3 +1,5 @@
+import "server-only";
+
 import {
   MENU_QUERY,
   STOREFRONT_SHOP_QUERY,
