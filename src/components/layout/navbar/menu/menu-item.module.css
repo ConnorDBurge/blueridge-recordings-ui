@@ -1,0 +1,29 @@
+.menu_underline {
+  display: inline-block;
+  color: #fed8a7;
+  text-decoration: none;
+}
+
+.menu_underline::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #fed8a7;
+  transition: width 0.3s;
+  border-radius: 5px;
+}
+
+.menu_underline:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.menu_active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+}

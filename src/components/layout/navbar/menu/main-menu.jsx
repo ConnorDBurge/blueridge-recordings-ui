@@ -9,12 +9,12 @@ export default async function MainMenu() {
       id="main-menu"
       className="md:flex hidden overflow-hidden justify-between items-center"
     >
-      <ul className="flex">
+      <ul className="flex gap-[10px]">
         {primaryMenu?.items.map((item) => (
           <MenuItem key={item?.id} item={item} />
         ))}
       </ul>
-      <ul className="flex">
+      <ul className="flex gap-[10px]">
         {secondaryMenu?.items.map((item) => (
           <MenuItem key={item?.id} item={item} />
         ))}
