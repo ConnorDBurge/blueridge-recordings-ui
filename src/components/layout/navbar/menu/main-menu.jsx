@@ -1,6 +1,9 @@
+import { getMenu } from "@/lib/shopify";
 import MenuItem from "./menu-item";
 
-export default function MainMenu({ primaryMenu, secondaryMenu }) {
+export default async function MainMenu() {
+  const primaryMenu = await getMenu("primary-menu");
+  const secondaryMenu = await getMenu("secondary-menu");
   return (
     <div
       id="main-menu"

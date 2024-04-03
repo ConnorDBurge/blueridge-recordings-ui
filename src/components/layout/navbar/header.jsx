@@ -4,12 +4,10 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { SearchIcon } from "@/components/icons";
-import { MainMenu } from "./menu";
 import { Search } from "./search";
 import { ShoppingCartButton } from "./shopping-cart";
-import styles from "./header.module.css";
 
-export default function Header({ shop, ...rest }) {
+export default function Header({ children, shop }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const lastScrollY = useRef(0);
 
@@ -67,10 +65,12 @@ export default function Header({ shop, ...rest }) {
         </div>
         <div
           className={`transition-all duration-300 ease-in-out ${
-            isCollapsed ? styles.hiddenMenu : styles.visibleMenu
+            isCollapsed
+              ? "max-h-0 opacity-0 overflow-hidden transition-[max-height 300ms ease-in-out, opacity 300ms ease-in-out]"
+              : "max-h-[500px] opacity-1"
           }`}
         >
-          <MainMenu {...rest} />
+          {children}
         </div>
         {/* <MobileMenu {...rest} className="md:hidden" /> */}
       </div>
