@@ -41,7 +41,9 @@ export default function Header({ children, className }) {
 
   return (
     <header
-      className={`${isCollapsed ? "md:h-[83px]" : "md:h-[116px]"} ${className}`}
+      className={`${
+        isCollapsed ? "md:h-[83px] overflow-hidden" : "md:h-[116px]"
+      } ${className}`}
     >
       {children}
     </header>
