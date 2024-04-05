@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <>
       <AnnouncementBar />
-      <Header className="bg-colors-primary h-[58px] sticky top-0 z-10 py-2 md:pt-4 md:pb-0 transition-all duration-300 ease-in-out ">
+      <Header className="bg-colors-primary h-[58px] sticky top-0 z-10 py-2 md:pt-4 md:pb-0 transition-300">
         <div className="container flex flex-col justify-between">
           <div className="flex">
             <HeaderLogo />

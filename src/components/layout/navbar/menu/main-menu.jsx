@@ -5,10 +5,7 @@ export default async function MainMenu() {
   const primaryMenu = await getMenu("primary-menu");
   const secondaryMenu = await getMenu("secondary-menu");
   return (
-    <div
-      id="main-menu"
-      className="md:flex hidden justify-between items-center relative"
-    >
+    <div className="md:flex hidden justify-between">
       <ul className="flex gap-3">
         {primaryMenu?.items.map((item) => (
           <MenuItem key={item?.id} item={item} />
