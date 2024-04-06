@@ -31,13 +31,13 @@ export default function Accordion({ children, header }) {
           {header}
         </div>
         <ChevronDownIcon
-          className={`w-6 h-6 transition-300 group-hover/acc:fill-colors-secondary 
+          className={`transition-300 group-hover/acc:fill-colors-secondary 
           ${accordionOpen && "rotate-180 fill-colors-secondary"}`}
         />
       </button>
       <div
-        className={`transition-300 overflow-hidden 
-        ${accordionOpen ? "max-h-screen" : "max-h-0"}`}
+        className={`transition-300 overflow-hidden flex flex-col gap-2
+        ${accordionOpen ? "max-h-screen pt-2" : "max-h-0"}`}
       >
         {children}
       </div>

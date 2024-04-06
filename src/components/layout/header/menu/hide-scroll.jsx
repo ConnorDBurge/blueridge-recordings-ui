@@ -41,7 +41,7 @@ export default function HideOnScroll({ children }) {
 
   return (
     <div
-      className={`bg-colors-primary transition-300
+      className={`transition-300
       ${isCollapsed && "-translate-y-full"}`}
     >
       {children}
