@@ -5,7 +5,7 @@ import { Search } from "./search";
 import { ShoppingCartButton } from "./shopping-cart";
 import { getMenu } from "@lib/shopify";
 
-export default async function Navbar() {
+export default async function Header() {
   const primaryMenu = await getMenu("primary-menu");
   const secondaryMenu = await getMenu("secondary-menu");
   return (

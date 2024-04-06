@@ -1,7 +1,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Suspense } from "react";
 
-import { Footer, Navbar } from "@components/layout";
+import { Footer, Header } from "@components/layout";
 import { getStorefront } from "@lib/shopify";
 import { baseUrl } from "@lib/utils";
 import "./globals.css";
@@ -26,7 +26,7 @@ export default async function RootLayout({ children }) {
         <link rel="icon" href={favicon} />
       </head>
       <body>
-        <Navbar />
+        <Header />
         <Suspense>{children}</Suspense>
         <Footer />
         <SpeedInsights />
