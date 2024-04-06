@@ -11,8 +11,8 @@ export default async function Header() {
   return (
     <>
       <AnnouncementBar />
-      <header className="sticky top-0 md:pb-0 flex flex-col z-20">
-        <div className="bg-colors-primary z-10">
+      <header className="sticky top-0 md:pb-0 flex flex-col z-25">
+        <div className="bg-colors-primary z-20">
           <div className="flex items-center justify-between gap-16 container md:py-3 py-2">
             <HeaderLogo />
             <Search />
