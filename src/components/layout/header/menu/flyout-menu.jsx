@@ -8,7 +8,7 @@ export default function FlyoutMenu({ menu }) {
   );
 
   return (
-    <div className="p-6 mt-[3px] ml-[-10px] min-w-40 max-h-[75vh] flex flex-col gap-3 cursor-default transition-300 transform origin-top absolute bg-colors-primary border-t-[1px] border-colors-tertiary z-20 group-hover/menu-li:scale-y-100 scale-y-0 rounded-b-lg">
+    <div className="transform origin-top absolute group-hover/menu-li:scale-y-100 scale-y-0 p-6 mt-[3px] ml-[-10px] min-w-40 max-h-[75vh] flex flex-col gap-3 cursor-default transition-300 bg-colors-primary border-t-[1px] border-colors-tertiary rounded-b-lg">
       {sortedSubItems.map((subItem) => (
         <div key={subItem?.path} className="group/sub-menu">
           {subItem?.depth > 0 ? (

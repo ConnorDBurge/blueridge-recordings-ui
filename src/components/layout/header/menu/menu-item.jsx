@@ -32,7 +32,7 @@ export default function MenuItem({ item }) {
       className={`
         ${isActive && styles.menu_active}
         ${styles.menu_underline} 
-        first:ml-0 last:mr-0 mb-0 group/menu-li pb-[1px] relative`}
+        first:ml-0 last:mr-0 mb-0 group/menu-li pb-[1px]`}
     >
       <Link
         href={item?.path}

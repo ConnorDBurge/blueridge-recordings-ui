@@ -42,7 +42,7 @@ export default function MainMenu({ primaryMenu, secondaryMenu }) {
 
   return (
     <div
-      className={`bg-colors-primary transition-300 z-15
+      className={`bg-colors-primary transition-300
       ${isCollapsed && "-translate-y-full"}`}
     >
       <div className="container md:flex hidden justify-between pt-[1px]">
