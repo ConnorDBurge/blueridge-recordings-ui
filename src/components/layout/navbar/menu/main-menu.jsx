@@ -48,7 +48,7 @@ export default function MainMenu({ primaryMenu, secondaryMenu, className }) {
       `}
     >
       <div className="container md:flex hidden justify-between">
-        <ul className="flex gap-3">
+        <ul className="flex gap-4">
           {primaryMenu?.items.map((item) => (
             <MenuItem key={item?.id} item={item} />
           ))}

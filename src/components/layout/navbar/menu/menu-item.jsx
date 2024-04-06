@@ -32,11 +32,11 @@ export default function MenuItem({ item }) {
       className={`
         ${isActive && styles.menu_active}
         ${styles.menu_underline} 
-        first:ml-0 last:mr-0 mb-[1px] group/menu-li relative`}
+        first:ml-0 last:mr-0 mb-0 group/menu-li relative`}
     >
       <Link
         href={item?.path}
-        className={`no-underline flex gap-1 my-0 pt-[4px] pb-[2px] transition-300 font-medium items-center text-white 
+        className={`no-underline flex gap-1 my-0 transition-300 font-medium items-center text-white 
         ${!isActive && "group-hover/menu-li:text-colors-secondary"}`}
       >
         {item?.title}
