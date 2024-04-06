@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import MenuItem from "./menu-item";
 
-export default function MainMenu({ primaryMenu, secondaryMenu }) {
+export default function HideOnScroll({ children }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const lastScrollY = useRef(0);
 
@@ -45,18 +44,7 @@ export default function MainMenu({ primaryMenu, secondaryMenu }) {
       className={`bg-colors-primary transition-300
       ${isCollapsed && "-translate-y-full"}`}
     >
-      <div className="container md:flex hidden justify-between pt-[1px] bg-transparent">
-        <ul className="flex gap-3">
-          {primaryMenu?.items.map((item) => (
-            <MenuItem key={item?.id} item={item} />
-          ))}
-        </ul>
-        <ul className="flex gap-3">
-          {secondaryMenu?.items.map((item) => (
-            <MenuItem key={item?.id} item={item} />
-          ))}
-        </ul>
-      </div>
+      {children}
     </div>
   );
 }

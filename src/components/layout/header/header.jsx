@@ -1,13 +1,10 @@
 import { HeaderLogo, SearchIcon } from "@components/icons";
 import AnnouncementBar from "./anncouncement-bar";
-import { MainMenu } from "./menu";
+import MainMenu from "./menu";
 import { Search } from "./search";
 import { ShoppingCartButton } from "./shopping-cart";
-import { getMenu } from "@lib/shopify";
 
 export default async function Header() {
-  const primaryMenu = await getMenu("primary-menu");
-  const secondaryMenu = await getMenu("secondary-menu");
   return (
     <>
       <AnnouncementBar />
@@ -22,7 +19,7 @@ export default async function Header() {
             </div>
           </div>
         </div>
-        <MainMenu primaryMenu={primaryMenu} secondaryMenu={secondaryMenu} />
+        <MainMenu />
       </header>
     </>
   );
