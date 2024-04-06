@@ -31,8 +31,9 @@ export default function MenuItem({ item }) {
       ref={linkRef}
       className={`
         ${isActive && styles.menu_active}
-        ${styles.menu_underline} 
-        first:ml-0 last:mr-0 mb-0 group/menu-li pb-[1px]`}
+        ${styles.menu_underline}
+        ${item?.depth < 1 && "mr-[7px]"} 
+        first:ml-0 last:mr-0 mb-0 pb-[1px] flex-col group/menu-li`}
     >
       <Link
         href={item?.path}
@@ -47,15 +48,7 @@ export default function MenuItem({ item }) {
           />
         )}
       </Link>
-      {item?.depth > 1 && (
-        <FlyoutMenu
-          menu={item}
-          style={{
-            marginLeft: megaMenu && `-${linkRect.left}px`,
-            width: megaMenu && "100vw",
-          }}
-        />
-      )}
+      {item?.depth > 1 && <FlyoutMenu menu={item} />}
     </li>
   );
 }
