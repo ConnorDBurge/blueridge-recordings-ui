@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import MenuItem from "./menu-item";
 
-export default function MainMenu({ primaryMenu, secondaryMenu, className }) {
+export default function MainMenu({ primaryMenu, secondaryMenu }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const lastScrollY = useRef(0);
 
@@ -42,12 +42,10 @@ export default function MainMenu({ primaryMenu, secondaryMenu, className }) {
 
   return (
     <div
-      className={`bg-colors-primary transition-300 pt-1
-      ${isCollapsed && "-translate-y-full"}
-      ${className}
-      `}
+      className={`bg-colors-primary transition-300
+      ${isCollapsed && "-translate-y-full"}`}
     >
-      <div className="container md:flex hidden justify-between">
+      <div className="container md:flex hidden justify-between pt-[1px]">
         <ul className="flex gap-4">
           {primaryMenu?.items.map((item) => (
             <MenuItem key={item?.id} item={item} />
