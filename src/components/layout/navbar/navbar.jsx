@@ -22,11 +22,7 @@ export default async function Navbar() {
             </div>
           </div>
         </div>
-        <MainMenu
-          className="pb-[1px]"
-          primaryMenu={primaryMenu}
-          secondaryMenu={secondaryMenu}
-        />
+        <MainMenu primaryMenu={primaryMenu} secondaryMenu={secondaryMenu} />
       </header>
     </>
   );

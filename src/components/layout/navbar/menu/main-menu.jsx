@@ -42,7 +42,7 @@ export default function MainMenu({ primaryMenu, secondaryMenu, className }) {
 
   return (
     <div
-      className={`bg-colors-primary transition-300
+      className={`bg-colors-primary transition-300 pt-1
       ${isCollapsed && "-translate-y-full"}
       ${className}
       `}
