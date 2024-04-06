@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { getAdmin } from "@/lib/shopify";
+import { getAdmin } from "@lib/shopify";
 
 export default async function AnnouncementBar() {
   const { contactEmail, timezone, billingAddress, hours } = await getAdmin();

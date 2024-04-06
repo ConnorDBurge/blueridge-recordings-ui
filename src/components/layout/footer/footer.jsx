@@ -1,4 +1,4 @@
-import { getMenu } from "@/lib/shopify";
+import { getMenu } from "@lib/shopify";
 
 export default async function Footer() {
   const primaryMenu = await getMenu("primary-menu");

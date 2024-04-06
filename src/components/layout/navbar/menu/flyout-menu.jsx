@@ -1,6 +1,6 @@
-import { ChevronDownIcon } from "@/components/icons";
+import { ChevronDownIcon } from "@components/icons";
 import Link from "next/link";
-import Accordion from "@/components/common/accordion";
+import Accordion from "@components/common/accordion";
 
 export default function FlyoutMenu({ menu }) {
   const sortedSubItems = menu.items.sort((a, b) =>

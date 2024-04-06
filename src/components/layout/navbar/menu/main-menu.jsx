@@ -1,4 +1,4 @@
-import { getMenu } from "@/lib/shopify";
+import { getMenu } from "@lib/shopify";
 import MenuItem from "./menu-item";
 
 export default async function MainMenu() {

@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDownIcon } from "@/components/icons";
+import { ChevronDownIcon } from "@components/icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";

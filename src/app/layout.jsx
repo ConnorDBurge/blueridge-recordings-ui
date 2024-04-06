@@ -1,9 +1,9 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Suspense } from "react";
 
-import { Footer, Navbar } from "@/components/layout";
-import { getStorefront } from "@/lib/shopify";
-import { baseUrl } from "@/lib/utils";
+import { Footer, Navbar } from "@components/layout";
+import { getStorefront } from "@lib/shopify";
+import { baseUrl } from "@lib/utils";
 import "./globals.css";
 
 export async function generateMetadata() {

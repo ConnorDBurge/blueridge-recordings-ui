@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { ChevronDownIcon } from "@/components/icons";
+import { ChevronDownIcon } from "@components/icons";
 
 export default function Accordion({ children, header }) {
   const [accordionOpen, setAccordionOpen] = useState(false);

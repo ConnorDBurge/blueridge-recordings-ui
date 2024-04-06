@@ -1,4 +1,4 @@
-import { HeaderLogo, SearchIcon } from "@/components/icons";
+import { HeaderLogo, SearchIcon } from "@components/icons";
 import AnnouncementBar from "./anncouncement-bar";
 import Header from "./header";
 import { MainMenu } from "./menu";

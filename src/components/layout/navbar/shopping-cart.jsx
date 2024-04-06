@@ -1,4 +1,4 @@
-import { ShoppingCartIcon } from "@/components/icons";
+import { ShoppingCartIcon } from "@components/icons";
 
 export function ShoppingCartButton({ itemCount = 0 }) {
   return (
