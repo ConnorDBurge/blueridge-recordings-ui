@@ -7,6 +7,16 @@ export default function HideOnScroll({ children }) {
   const lastScrollY = useRef(0);
 
   useEffect(() => {
+    const handleResize = () => {
+      // Enable or disable functionality based on screen width
+      if (window.innerWidth >= 769) {
+        window.addEventListener("scroll", handleScroll);
+      } else {
+        window.removeEventListener("scroll", handleScroll);
+        setIsCollapsed(false);
+      }
+    };
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY <= 0) {
@@ -27,16 +37,14 @@ export default function HideOnScroll({ children }) {
       lastScrollY.current = currentScrollY;
     };
 
-    const onScroll = () => {
-      window.requestAnimationFrame(handleScroll);
-    };
+    handleResize();
 
-    if (window.innerWidth >= 769) {
-      window.addEventListener("scroll", onScroll);
-      return () => {
-        window.removeEventListener("scroll", onScroll);
-      };
-    }
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, [isCollapsed]);
 
   return (

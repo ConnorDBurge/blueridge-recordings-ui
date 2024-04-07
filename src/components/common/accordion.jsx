@@ -25,19 +25,19 @@ export default function Accordion({ children, header }) {
         className="flex justify-between w-full group/acc"
       >
         <div
-          className={`group-hover/acc:text-colors-secondary 
-          ${accordionOpen ? "text-colors-secondary" : "text-white"}`}
+          className={`group-hover/acc:text-secondary transition-300 mr-1
+          ${accordionOpen ? "text-secondary" : "text-white"}`}
         >
           {header}
         </div>
         <ChevronDownIcon
-          className={`transition-300 group-hover/acc:fill-colors-secondary 
-          ${accordionOpen && "rotate-180 fill-colors-secondary"}`}
+          className={`transition-300 group-hover/acc:fill-secondary 
+          ${accordionOpen && "rotate-180 fill-secondary"}`}
         />
       </button>
       <div
-        className={`transition-300 overflow-hidden flex flex-col gap-2
-        ${accordionOpen ? "max-h-screen pt-2" : "max-h-0"}`}
+        className={`transition-500 overflow-hidden
+        ${accordionOpen ? "max-h-screen" : "max-h-0"}`}
       >
         {children}
       </div>

@@ -14,13 +14,7 @@ export default function HeaderLogo({ ...rest }) {
       >
         <defs>
           <style>
-            {`
-              .blueridge, .recordings {
-                fill-rule: evenodd;
-                stroke-width: 0px;
-              }
-              
-              .blueridge {
+            {`.blueridge {
                 fill: #FED8A7;
               }
               

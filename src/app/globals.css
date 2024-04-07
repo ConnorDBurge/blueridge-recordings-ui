@@ -8,7 +8,7 @@
   *::before {
     box-sizing: border-box;
     font-family: "Avenir Next", sans-serif;
-    @apply text-colors-primary;
+    @apply text-primary;
   }
 
   body {
@@ -157,5 +157,13 @@
 
   .transition-500 {
     @apply transition-all duration-500 ease-in-out;
+  }
+
+  .transition-700 {
+    @apply transition-all duration-700 ease-in-out;
+  }
+
+  .container {
+    @apply max-w-[1320px] px-5 md:px-8 lg:px-16 mx-auto;
   }
 }

@@ -14,23 +14,20 @@ export default async function AnnouncementBar() {
           <div className="flex-1" />
           <div className="flex gap-3 text-white text-[14.4px] font-semibold py-[6px] px-4 pr-0">
             <Link
-              className="hover:no-underline hover:text-colors-secondary"
+              className="hover:no-underline hover:text-secondary"
               href={`tel:+1 ${billingAddress?.phone}`}
             >
               +1 {billingAddress?.phone}
             </Link>
             <Divider />
             <Link
-              className="hover:no-underline hover:text-colors-secondary"
+              className="hover:no-underline hover:text-secondary"
               href={`mailto:${contactEmail}`}
             >
               {contactEmail}
             </Link>
             <Divider />
-            <Link
-              className="hover:no-underline hover:text-colors-secondary"
-              href="/"
-            >
+            <Link className="hover:no-underline hover:text-secondary" href="/">
               {abbreviated?.value || long?.value} {timezone}
             </Link>
           </div>
