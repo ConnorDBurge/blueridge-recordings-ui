@@ -5,10 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import FlyoutMenu from "./flyout-menu";
 import styles from "./menu-item.module.css";
+import MegaMenu from "./mega-menu";
 
 export default function MenuItem({ item }) {
   const pathname = usePathname();
   const isActive = pathname === item?.path;
+  const isMegaMenu = item?.path === "/collections/all";
 
   return (
     <li
@@ -31,10 +33,18 @@ export default function MenuItem({ item }) {
           />
         )}
       </Link>
-      {item?.depth > 1 && (
-        <div className="absolute max-h-0 group-hover/menu-li:max-h-[75vh] overflow-hidden transition-300 rounded-b-lg ml-[-10px] mt-[3px]">
-          <FlyoutMenu menu={item} />
-        </div>
+      {item?.depth > 0 && (
+        <>
+          {isMegaMenu ? (
+            <div className="absolute max-h-0 group-hover/menu-li:max-h-[75vh] overflow-hidden transition-300 mt-[3px] w-screen left-0">
+              <MegaMenu menu={item} />
+            </div>
+          ) : (
+            <div className="absolute max-h-0 group-hover/menu-li:max-h-[75vh] overflow-hidden transition-300 rounded-b-lg ml-[-10px] mt-[3px]">
+              <FlyoutMenu menu={item} />
+            </div>
+          )}
+        </>
       )}
     </li>
   );

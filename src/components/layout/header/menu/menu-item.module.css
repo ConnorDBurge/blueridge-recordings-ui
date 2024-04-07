@@ -27,3 +27,30 @@
   background: #fff;
   border-radius: 5px;
 }
+
+.mega_menu_underline {
+  display: inline-block;
+}
+
+.mega_menu_underline::after {
+  content: "";
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  margin: 12px 0;
+  background-color: #2a283c; /* Start with a white background */
+  background-image: linear-gradient(
+    to right,
+    #fed8a7 0%,
+    #fed8a7 100%
+  ); /* Tan color gradient */
+  background-size: 0% 100%; /* Start with no width */
+  background-repeat: no-repeat;
+  transition: background-size 0.3s;
+  border-radius: 5px;
+}
+
+.mega_menu_parent:hover .mega_menu_underline::after {
+  background-size: 100% 100%; /* Expand the background gradient to full width on hover */
+}

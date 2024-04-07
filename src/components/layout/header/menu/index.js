@@ -11,9 +11,7 @@ export default async function MainMenu() {
         <nav className="container md:flex hidden justify-between bg-transparent group">
           <ul className="flex gap-3">
             {primaryMenu?.items.map((item) => (
-              <div>
-                <MenuItem key={item?.id} item={item} />
-              </div>
+              <MenuItem key={item?.id} item={item} />
             ))}
           </ul>
           <ul className="flex gap-3">
