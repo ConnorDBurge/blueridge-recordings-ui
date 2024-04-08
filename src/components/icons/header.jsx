@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export default function HeaderLogo({ ...rest }) {
+export default function HeaderLogo({
+  primary = "#FED8A7",
+  secondary = "#FFF",
+  ...rest
+}) {
   return (
     <Link
       href="/"
@@ -14,13 +18,8 @@ export default function HeaderLogo({ ...rest }) {
       >
         <defs>
           <style>
-            {`.blueridge {
-                fill: #FED8A7;
-              }
-              
-              .recordings {
-                fill: #FFF;
-              }
+            {`.blueridge { fill: ${primary}; }
+              .recordings { fill: ${secondary}; }
             `}
           </style>
         </defs>
