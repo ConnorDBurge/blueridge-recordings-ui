@@ -1,7 +1,7 @@
 import { ShoppingCartIcon } from "@components/icons";
 import Link from "next/link";
 
-export function ShoppingCartButton({ itemCount = 20 }) {
+export function ShoppingCartButton({ itemCount = 0 }) {
   return (
     <Link
       href="/cart"
@@ -9,7 +9,7 @@ export function ShoppingCartButton({ itemCount = 20 }) {
     >
       <ShoppingCartIcon className="h-[31px] w-[31px] group-hover:fill-secondary" />
       {itemCount > 0 && (
-        <span className="bg-secondary text-primary border-[2px] border-primary px-[6px] pt-px text-[12px] font-semibold rounded-full absolute -top-[9px] -right-[10px]">
+        <span className="absolute -right-[10px] -top-[9px] rounded-full border-[2px] border-primary bg-secondary px-[6px] pt-px text-[12px] font-semibold text-primary">
           {itemCount}
         </span>
       )}

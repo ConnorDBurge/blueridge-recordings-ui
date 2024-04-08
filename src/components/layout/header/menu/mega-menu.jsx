@@ -5,20 +5,20 @@ import styles from "./menu-item.module.css";
 
 export default function MegaMenu({ menu }) {
   const sortedSubItems = menu.items.sort((a, b) =>
-    a.title.localeCompare(b.title)
+    a.title.localeCompare(b.title),
   );
 
   return (
-    <div className="max-h-[75vh] -translate-y-[200%] group-hover/menu-li:translate-y-0 transition-300 cursor-default bg-primary border-t-[1px] border-tertiary overflow-y-auto">
+    <div className="transition-300 max-h-[75vh] -translate-y-[200%] cursor-default overflow-y-auto border-t-[1px] border-tertiary bg-primary group-hover/menu-li:translate-y-0">
       <div className="container py-8">
-        <div className="grid grid-cols-3 gap-x-10 xl:gap-x-24 gap-y-8">
+        <div className="grid grid-cols-3 gap-x-10 gap-y-8 xl:gap-x-24">
           {sortedSubItems.map((subItem) => (
             <div
               key={subItem?.path}
-              className={`${styles.mega_menu_parent} group/sub-menu opacity-0 group-hover/menu-li:opacity-100 transition-700`}
+              className={`${styles.mega_menu_parent} group/sub-menu transition-700 opacity-0 group-hover/menu-li:opacity-100`}
             >
               <div
-                className={`${styles.mega_menu_underline} flex flex-col transition-300`}
+                className={`${styles.mega_menu_underline} transition-300 flex flex-col`}
               >
                 <div className="flex items-center justify-between">
                   <div className="text-white group-hover/sub-menu:text-secondary">
@@ -26,9 +26,9 @@ export default function MegaMenu({ menu }) {
                   </div>
                   <Link
                     href={subItem?.path}
-                    className="no-underline flex gap-1 items-center group/see-all"
+                    className="group/see-all flex items-center gap-1 no-underline"
                   >
-                    <span className="text-gray-200 group-hover/see-all:text-secondary group-hover/see-all:opacity-100 text-sm opacity-75 no-underline transition-300">
+                    <span className="transition-300 text-sm text-gray-200 no-underline opacity-75 group-hover/see-all:text-secondary group-hover/see-all:opacity-100">
                       See All
                     </span>
                   </Link>
@@ -39,7 +39,7 @@ export default function MegaMenu({ menu }) {
                   <Link
                     key={accordionItem?.path}
                     href={accordionItem?.path}
-                    className="no-underline text-gray-200 opacity-75 text-sm py-1 transition-300 hover:text-secondary hover:translate-x-1 hover:opacity-100"
+                    className="transition-300 py-1 text-sm text-gray-200 no-underline opacity-75 hover:translate-x-1 hover:text-secondary hover:opacity-100"
                   >
                     {accordionItem?.title}
                   </Link>

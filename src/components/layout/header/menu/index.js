@@ -8,7 +8,7 @@ export default async function MainMenu() {
   return (
     <HideOnScroll>
       <div className="bg-primary">
-        <nav className="container md:flex hidden justify-between bg-transparent group">
+        <nav className="group container hidden justify-between bg-transparent md:flex">
           <ul className="flex gap-3">
             {primaryMenu?.items.map((item) => (
               <MenuItem key={item?.id} item={item} />

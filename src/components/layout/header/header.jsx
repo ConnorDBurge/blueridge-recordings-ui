@@ -8,13 +8,13 @@ export default async function Header() {
   return (
     <>
       <AnnouncementBar />
-      <header className="sticky top-0 md:pb-0 flex flex-col z-25">
-        <div className="bg-primary z-20">
-          <div className="container flex items-center gap-8 lg:gap-16 md:py-3 py-2">
+      <header className="z-25 sticky top-0 flex flex-col md:pb-0">
+        <div className="z-20 bg-primary">
+          <div className="container flex items-center gap-8 py-2 md:py-3 lg:gap-16">
             <HeaderLogo />
             <Search />
-            <div className="flex justify-end items-center gap-4">
-              <SearchIcon className="md:hidden h-8 w-8 hover:fill-secondary hover:cursor-pointer" />
+            <div className="flex items-center justify-end gap-4">
+              <SearchIcon className="h-8 w-8 hover:cursor-pointer hover:fill-secondary md:hidden" />
               <ShoppingCartButton />
             </div>
           </div>

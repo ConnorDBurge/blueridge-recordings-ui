@@ -4,24 +4,24 @@ import Accordion from "@components/common/accordion";
 
 export default function FlyoutMenu({ menu }) {
   const sortedSubItems = menu.items.sort((a, b) =>
-    a.title.localeCompare(b.title)
+    a.title.localeCompare(b.title),
   );
 
   return (
-    <div className="max-h-[75vh] -translate-y-[200%] group-hover/menu-li:translate-y-0 transition-300 p-6 min-w-40 flex flex-col gap-3 cursor-default bg-primary border-t-[1px] border-tertiary overflow-y-auto rounded-b-lg">
+    <div className="transition-300 flex max-h-[75vh] min-w-40 -translate-y-[200%] cursor-default flex-col gap-3 overflow-y-auto rounded-b-lg border-t-[1px] border-tertiary bg-primary p-6 group-hover/menu-li:translate-y-0">
       {sortedSubItems.map((subItem) => (
         <div
           key={subItem?.path}
-          className="group/sub-menu opacity-0 group-hover/menu-li:opacity-100 transition-700"
+          className="group/sub-menu transition-700 opacity-0 group-hover/menu-li:opacity-100"
         >
           {subItem?.depth > 0 ? (
             <Accordion header={subItem?.title}>
-              <div className="pt-2 flex flex-col gap-2">
+              <div className="flex flex-col gap-2 pt-2">
                 {subItem?.items.map((accordionItem) => (
                   <Link
                     key={accordionItem?.path}
                     href={accordionItem?.path}
-                    className="no-underline text-gray-200 opacity-75 text-sm pr-1 transition-300 hover:text-secondary hover:translate-x-1 hover:opacity-100"
+                    className="transition-300 pr-1 text-sm text-gray-200 no-underline opacity-75 hover:translate-x-1 hover:text-secondary hover:opacity-100"
                   >
                     {accordionItem?.title}
                   </Link>
@@ -31,7 +31,7 @@ export default function FlyoutMenu({ menu }) {
           ) : (
             <Link
               href={subItem?.path}
-              className="flex justify-between whitespace-nowrap transition-300 text-white group-hover/sub-menu:text-secondary hover:translate-x-1 no-underline"
+              className="transition-300 flex justify-between whitespace-nowrap text-white no-underline hover:translate-x-1 group-hover/sub-menu:text-secondary"
             >
               {subItem?.title}
               {subItem?.depth > 0 && (

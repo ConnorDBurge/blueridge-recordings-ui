@@ -8,7 +8,7 @@ export default function HeaderLogo({
   return (
     <Link
       href="/"
-      className="block pt-[2px] w-[150px] md:w-[200px] md:p-0 md:ml-0"
+      className="block w-[150px] pt-[2px] md:ml-0 md:w-[200px] md:p-0"
     >
       <svg
         id="icon-store-logo"

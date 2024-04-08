@@ -22,10 +22,10 @@ export default function Accordion({ children, header }) {
     <div ref={accordionRef} onMouseLeave={() => setAccordionOpen(false)}>
       <button
         onClick={() => setAccordionOpen(!accordionOpen)}
-        className="flex justify-between w-full group/acc"
+        className="group/acc flex w-full justify-between"
       >
         <div
-          className={`group-hover/acc:text-secondary transition-300 mr-1
+          className={`transition-300 mr-1 group-hover/acc:text-secondary
           ${accordionOpen ? "text-secondary" : "text-white"}`}
         >
           {header}

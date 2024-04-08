@@ -32,7 +32,7 @@ export default function SearchInput() {
           }
           setPlaceholder(placeholders[index].substring(0, position));
         },
-        typing ? 100 : 60
+        typing ? 100 : 60,
       );
     };
     updateText();
@@ -43,7 +43,7 @@ export default function SearchInput() {
       id="search"
       name="search"
       autoComplete="off"
-      className="block h-[43px] w-full rounded-md border border-transparent m-0 bg-tertiary py-1.5 pt-2 pl-14 pr-3 text-white placeholder:text-base placeholder:text-gray-400 focus:text-gray-300 focus:border-gray-400 focus:ring-0 sm:leading-6 transition-colors duration-300"
+      className="m-0 block h-[43px] w-full rounded-md border border-transparent bg-tertiary py-1.5 pl-14 pr-3 pt-2 text-white transition-colors duration-300 placeholder:text-base placeholder:text-gray-400 focus:border-gray-400 focus:text-gray-300 focus:ring-0 sm:leading-6"
       placeholder={placeholder}
     />
   );

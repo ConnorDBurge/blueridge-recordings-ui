@@ -18,11 +18,11 @@ export default function MenuItem({ item }) {
         ${isActive && styles.menu_active}
         ${styles.menu_underline}
         ${item?.depth < 1 && "mr-[7px]"} 
-        m-0 py-px group/menu-li`}
+        group/menu-li m-0 py-px`}
     >
       <Link
         href={item?.path}
-        className={`no-underline flex gap-1 my-0 transition-300 font-medium items-center text-white 
+        className={`transition-300 my-0 flex items-center gap-1 font-medium text-white no-underline 
         ${!isActive && "group-hover/menu-li:text-secondary"}`}
       >
         {item?.title}
@@ -36,11 +36,11 @@ export default function MenuItem({ item }) {
       {item?.depth > 0 && (
         <>
           {isMegaMenu ? (
-            <div className="absolute max-h-0 group-hover/menu-li:max-h-[75vh] overflow-hidden transition-300 mt-[3px] w-screen left-0">
+            <div className="transition-300 absolute left-0 mt-[3px] max-h-0 w-screen overflow-hidden group-hover/menu-li:max-h-[75vh]">
               <MegaMenu menu={item} />
             </div>
           ) : (
-            <div className="absolute max-h-0 group-hover/menu-li:max-h-[75vh] overflow-hidden transition-300 rounded-b-lg ml-[-10px] mt-[3px]">
+            <div className="transition-300 absolute ml-[-10px] mt-[3px] max-h-0 overflow-hidden rounded-b-lg group-hover/menu-li:max-h-[75vh]">
               <FlyoutMenu menu={item} />
             </div>
           )}
