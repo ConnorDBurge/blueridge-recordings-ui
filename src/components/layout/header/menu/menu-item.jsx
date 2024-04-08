@@ -18,7 +18,7 @@ export default function MenuItem({ item }) {
         ${isActive && styles.menu_active}
         ${styles.menu_underline}
         ${item?.depth < 1 && "mr-[7px]"} 
-        m-0 py-[1px] group/menu-li`}
+        m-0 py-px group/menu-li`}
     >
       <Link
         href={item?.path}

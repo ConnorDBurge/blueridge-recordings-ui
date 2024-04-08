@@ -9,7 +9,7 @@ export default async function Header() {
     <>
       <AnnouncementBar />
       <header className="sticky top-0 md:pb-0 flex flex-col z-25">
-        <div className="bg-primary">
+        <div className="bg-primary z-20">
           <div className="container flex items-center gap-8 lg:gap-16 md:py-3 py-2">
             <HeaderLogo />
             <Search />
